@@ -20,7 +20,9 @@ public class UnitSelect : MonoBehaviour
 
     [SerializeField]
     private ResourceSource curResource; //current selected resource
-
+    
+    [SerializeField] private Unit curEnemy;
+    
     [SerializeField]
     private RectTransform selectionBox;
     private Vector2 oldAnchoredPos;//Box old anchored position
@@ -94,6 +96,12 @@ public class UnitSelect : MonoBehaviour
             unit.ToggleSelectionVisual(true);
             ShowUnit(unit);
         }
+        else //single enemy
+        {
+            curEnemy = unit;
+            curEnemy.ToggleSelectionVisual(true);
+            ShowEnemyUnit(unit);
+        }
     }
     
     private void TrySelect(Vector2 screenPos)
@@ -139,6 +147,11 @@ public class UnitSelect : MonoBehaviour
         if (curResource != null)
         {
             curResource.ToggleSelectionVisual(false);
+        }
+        
+        if (curEnemy != null)
+        {
+            curEnemy.ToggleSelectionVisual(false);
         }
 
     }
@@ -240,4 +253,8 @@ public class UnitSelect : MonoBehaviour
             selectionBox.sizeDelta = new Vector2(0, 0); //clear Selection Box's size;
         }
 
+        void ShowEnemyUnit(Unit u)
+        {
+            InfoManager.instance.ShowEnemyAllInfo(u);
+        }
 }

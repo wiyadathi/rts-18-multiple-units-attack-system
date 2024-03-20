@@ -2336,7 +2336,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f81a978cf85038f41a62cf0aad8c2981, type: 2}
+  - {fileID: 2100000, guid: ce19f20337e1d6545bddd9bc3ba7de65, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5142,7 +5142,7 @@ GameObject:
   - component: {fileID: 8536169704182873618}
   - component: {fileID: 7265461384978426110}
   m_Layer: 6
-  m_Name: Soldier
+  m_Name: BritishSoldier
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5259,7 +5259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  unitName: Rugular
+  unitName: Brit. Rugular
   unitPic: {fileID: 21300000, guid: efa39dabea2167e44ab6b24eb7127917, type: 3}
   curHP: 100
   maxHP: 100
@@ -5271,6 +5271,10 @@ MonoBehaviour:
   weaponRange: 15
   state: 0
   faction: {fileID: 0}
+  isBuilder: 0
+  builder: {fileID: 0}
+  isWorker: 0
+  worker: {fileID: 0}
   selectionVisual: {fileID: 7429563455645212587}
   unitCost:
     food: 50
@@ -5278,6 +5282,8 @@ MonoBehaviour:
     gold: 20
     stone: 0
   unitWaitTime: 0.1
+  pathUpdateRate: 1
+  lastPathUpdateTime: 0
 --- !u!114 &7265461384978426110
 MonoBehaviour:
   m_ObjectHideFlags: 0
