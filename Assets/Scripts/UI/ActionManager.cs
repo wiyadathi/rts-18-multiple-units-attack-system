@@ -94,10 +94,10 @@ public class ActionManager : MonoBehaviour
 
     public void CreateBuildingButton(int n)//Map with Create Building Btns
     {
-        Debug.Log("1 - Click Button: " + n);
-        Debug.Log("check the unit is Builder ");
-        Unit unit = UnitSelect.instance.CurUnit;
-        Debug.Log("check the unit is Builder ");
+        //Debug.Log("1 - Click Button: " + n);
+        //Debug.Log("check the unit is Builder ");
+        
+        Unit unit = UnitSelect.instance.CurUnits[0];
         
         if (unit.IsBuilder)
         {
