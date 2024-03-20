@@ -60,7 +60,9 @@ public class UnitCommand : MonoBehaviour
                 case "Resource":
                     ResourceCommand(hit, unitSelect.CurUnits);
                     break;
-
+                case "Unit":
+                    CommandToUnit(hit, unitSelect.CurUnits);
+                    break;
             }
         }
     }
@@ -97,5 +99,27 @@ public class UnitCommand : MonoBehaviour
         CreateVFXMarker(hit.transform.position, MainUI.instance.SelectionMarker);
     }
 
+    private void UnitAttackEnemy(Unit enemy, List<Unit> units)
+    {
+        foreach (Unit u in units)
+        {
+            u.ToAttackUnit(enemy);
+        }
+    }
+
+    private void CommandToUnit(RaycastHit hit, List<Unit> units)
+    {
+        Unit target = hit.collider.gameObject.GetComponent<Unit>();
+        Debug.Log(target.name + target.Faction + "target enemy is click!");
+        
+        if (target == null)
+            return;
+
+        if (target.Faction == GameManager.instance.EnemyFaction) // if it is our enemy
+        {
+           // Debug.Log("Unit attack enemy!");
+            UnitAttackEnemy(target, units);
+        }
+    }
 
 }

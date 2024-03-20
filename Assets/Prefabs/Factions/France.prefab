@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 4509269917425615125}
   - component: {fileID: -6549435420299524359}
   m_Layer: 0
-  m_Name: Britain
+  m_Name: France
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce85dedb30b5ccb4890f3be0d5ab50f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nation: 1
+  nation: 3
   unitsParent: {fileID: 6844647152538872566}
   buildingsParent: {fileID: 5147834516633767032}
   ghostBuildingParent: {fileID: 966964212243149724}
